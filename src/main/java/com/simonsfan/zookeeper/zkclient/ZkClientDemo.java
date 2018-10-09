@@ -69,7 +69,7 @@ public class ZkClientDemo {
 
     }
 
-    //订阅节点数据内容变化事件，包含 当前节点删除、子节点删除、子节点新增 均能收到通知
+    //订阅节点数据内容变化事件（监听），包含 当前节点删除、子节点删除、子节点新增 均能收到通知
     public static class NodeChangeListener implements IZkChildListener {
         @Override
         public void handleChildChange(String s, List<String> list) throws Exception {
@@ -77,7 +77,7 @@ public class ZkClientDemo {
         }
     }
 
-    //订阅节点数据内容变化事件，包含 节点删除、内容修改
+    //订阅节点数据内容变化事件（监听），包含 节点删除、内容修改
     public static class DataChangeListener implements IZkDataListener {
         @Override
         public void handleDataChange(String s, Object o) throws Exception {
