@@ -125,12 +125,8 @@ public class CuratorDemo {
                         default:
                             break;
                     }
-
-
                 }
             });
-
-
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
