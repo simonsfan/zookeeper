@@ -43,9 +43,9 @@ public class DistributedIdGeneraterService {
         curatorFrameworkClient.start();
         try {
             executorService = Executors.newFixedThreadPool(10);
-
+            //请先判断父节点/root节点是否存在
             Stat stat = curatorFrameworkClient.checkExists().forPath(ROOT);
-            if (stat == null) {  //请先判断/root节点是否存在
+            if (stat == null) {
                 curatorFrameworkClient.create().withMode(CreateMode.PERSISTENT).forPath(ROOT, null);
             }
         } catch (Exception e) {
